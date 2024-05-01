@@ -19,7 +19,7 @@ const Pagination = ({
 	return (
 		<div className='flex gap-3 justify-center'>
 			<button
-				className='text-white bg-cyan-500 rounded-md px-3 py-2 disabled:opacity-60'
+				className='text-white bg-cyan-500 rounded-md px-3 py-2 disabled:opacity-60 disabled:hover:bg-cyan-400 hover:bg-blue-400'
 				onClick={onPrev}
 				disabled={prevDisabled}
 			>
@@ -28,7 +28,7 @@ const Pagination = ({
 			{Array.from({ length: totalPages || 0 }, (_, i) => i + 1).map((i) => (
 				<button
 					key={i}
-					className={`text-white bg-cyan-500 rounded-md px-3 py-2 ${
+					className={`text-white bg-cyan-500 disabled:hover:bg-cyan-400 hover:bg-blue-400 rounded-md px-3 py-2 ${
 						page === i ? 'bg-purple-900' : ''
 					}`}
 					onClick={() => onPageChange(i)}
@@ -37,7 +37,7 @@ const Pagination = ({
 				</button>
 			))}
 			<button
-				className='text-white bg-cyan-500 rounded-md px-3 py-2 disabled:opacity-60'
+				className='text-white bg-cyan-500 rounded-md px-3 py-2 disabled:opacity-60 disabled:hover:bg-cyan-400 hover:bg-blue-400'
 				onClick={onNext}
 				disabled={nextDisabled}
 			>

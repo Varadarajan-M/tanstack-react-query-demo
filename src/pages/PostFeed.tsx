@@ -10,10 +10,10 @@ const Summary = () => {
 	return (
 		<div className='p-6 text-white flex flex-col gap-2'>
 			<h1 className='text-3xl font-bold underline text-yellow-100'>
-				Query/Paginated Post Feed
+				Paginated Post Feed
 			</h1>
 			<p>
-				This example shows a post feed with pagination using{' '}
+				This example shows how to fetch a post feed with pagination using{' '}
 				<code className='text-yellow-500'>useQuery</code> hook.
 			</p>
 		</div>
@@ -36,7 +36,6 @@ const PostFeed = () => {
 	const navigate = useNavigate();
 
 	const onPostEdit = (id: number) => navigate(`/post/${id}/edit`);
-
 
 	const prefetchPost = usePrefetchPost();
 

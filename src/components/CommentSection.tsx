@@ -44,11 +44,11 @@ const CommentSection = ({
 						type='text'
 						placeholder='Comment'
 						required
-						className='bg-transparent border-purple-800 outline-none border rounded-lg px-3 py-2'
+						className='bg-transparent border-purple-800 outline-none border rounded-lg px-3 py-2 focus:border-purple-500'
 					/>
 					<button
 						onClick={handleAddComment}
-						className='text-white bg-blue-500 rounded-md px-3 py-2  disabled:opacity-50'
+						className='text-white bg-blue-500 rounded-md px-3 py-2  disabled:opacity-50 disabled:hover:bg-cyan-400 hover:bg-blue-400'
 					>
 						Add Comment
 					</button>
@@ -69,7 +69,7 @@ const CommentSection = ({
 			{hasNextPage && pages.length && (
 				<button
 					onClick={() => fetchNextPage?.()}
-					className='w-max mx-auto -mt-7 z-10 text-white bg-cyan-500 rounded-md px-3 py-2 disabled:opacity-60'
+					className='w-max mx-auto -mt-7 z-10 text-white bg-cyan-500 disabled:hover:bg-cyan-400 hover:bg-blue-400 rounded-md px-3 py-2 disabled:opacity-60'
 				>
 					Load more comments...
 				</button>

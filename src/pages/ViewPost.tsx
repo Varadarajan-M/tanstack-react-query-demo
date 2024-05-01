@@ -12,11 +12,14 @@ const Explanation = () => {
 	return (
 		<div className='p-6 text-white flex flex-col gap-2'>
 			<h1 className='text-3xl font-bold underline text-yellow-100'>
-				Query/Single Post Fetch
+				Post, Comments
 			</h1>
 			<p>
-				This example shows how to fetch a single post using{' '}
-				<code className='text-yellow-500'>useQuery</code> hook.
+				This page shows how to fetch a single post using{' '}
+				<code className='text-yellow-500'>useQuery</code> hook. Comments are
+				fetched incrementally using{' '}
+				<code className='text-yellow-500'>useInfiniteQuery</code> hook and added
+				with <code className='text-yellow-500'>useMutation</code> hook.
 			</p>
 		</div>
 	);

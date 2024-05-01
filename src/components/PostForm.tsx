@@ -46,7 +46,7 @@ const PostForm = ({ defaultValues, onSubmit, formDisabled }: PostFormProps) => {
 					type='text'
 					placeholder='Title'
 					required
-					className='bg-transparent border-purple-800 outline-none border rounded-lg px-3 py-2'
+					className='bg-transparent border-purple-800 focus:border-purple-500 outline-none border rounded-lg px-3 py-2'
 				/>
 			</label>
 
@@ -72,7 +72,7 @@ const PostForm = ({ defaultValues, onSubmit, formDisabled }: PostFormProps) => {
 					value={values?.tags}
 					placeholder='Tags comma seperated'
 					required
-					className='outline-none border rounded-lg px-3 py-2 bg-transparent border-purple-800'
+					className='outline-none border rounded-lg px-3 py-2 bg-transparent border-purple-800 focus:border-purple-500'
 				/>
 			</label>
 			<button
