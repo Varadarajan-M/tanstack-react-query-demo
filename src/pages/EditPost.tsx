@@ -38,12 +38,16 @@ const EditPost = () => {
 			<Explanation />
 
 			{isLoading && (
-				<div className='min-h-12'>
+				<div className='min-h-12 flex justify-center items-center'>
 					<Loader width='48' height='48' />
 				</div>
 			)}
 
-			{isError && <div className='text-red-500'>{error?.message}</div>}
+			{isError && (
+				<div className='text-red-500 text-center w-full'>
+					{error?.message ?? 'Something went wrong'}
+				</div>
+			)}
 
 			{data && (
 				<div className='flex flex-col gap-1 w-full'>

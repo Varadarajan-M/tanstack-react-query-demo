@@ -53,9 +53,12 @@ const ViewPost = () => {
 		});
 	};
 
-	const { data, fetchNextPage, hasNextPage } = useComments(
-		+(params?.id as string),
-	);
+	const {
+		data,
+		fetchNextPage,
+		hasNextPage,
+		isLoading: isCommentsLoading,
+	} = useComments(+(params?.id as string));
 
 	const { mutateAsync: addComment } = useAddComment(params?.id as string);
 
@@ -64,12 +67,16 @@ const ViewPost = () => {
 			<Explanation />
 
 			{isLoading && (
-				<div className='min-h-12'>
+				<div className='min-h-12 flex w-full items-center justify-center'>
 					<Loader width='48' height='48' />
 				</div>
 			)}
 
-			{isError && <div className='text-red-500'>{error?.message}</div>}
+			{isError && (
+				<div className='text-red-500 text-center w-full'>
+					{error?.message ?? 'Something went wrong'}
+				</div>
+			)}
 
 			{!isError && post && (
 				<div className='flex flex-col gap-1 w-full'>
@@ -97,6 +104,7 @@ const ViewPost = () => {
 				hasNextPage={hasNextPage}
 				onAddComment={addComment}
 				postId={params?.id as string}
+				isLoading={isCommentsLoading}
 			/>
 		</div>
 	);

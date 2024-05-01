@@ -19,5 +19,6 @@ export const usePosts = (page: number) => {
 		queryFn: ({ signal }) => fetchPostsPaginated(page, signal) as any,
 		placeholderData: keepPreviousData,
 		staleTime: 1000 * 10,
+		refetchOnMount: true,
 	});
 };

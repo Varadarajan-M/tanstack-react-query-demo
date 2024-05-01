@@ -40,7 +40,9 @@ export const PaginatedPostFeed = ({
 			)}
 
 			{isError && (
-				<div className='p-4 text-white text-center animate-pulse'>{error}</div>
+				<div className='p-4 text-center animate-pulse text-red-600'>
+					{error ?? ''}
+				</div>
 			)}
 
 			{isLoading && (
